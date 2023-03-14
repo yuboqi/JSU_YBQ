@@ -1,0 +1,22 @@
+{
+    "sourceFile": "src/components/welcome.vue",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1656556597216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656557293594,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n         <el-carousel-item>\n           <img src=\"../assets/img/5.jpg\" alt />\n         </el-carousel-item>\n       </el-carousel>\n-      <h2 class=\"welcome\">欢迎您！使用黄河科技学院宿舍管理系统</h2>\n+      <h2 class=\"welcome\">欢迎您！使用学生宿舍管理系统</h2>\n     </el-card>\n   </div>\n </template>\n \n"
+                }
+            ],
+            "date": 1656556597216,
+            "name": "Commit-0",
+            "content": "<template>\n  <div>\n    <el-card>\n      <div class=\"logo\">\n        <img src=\"../assets/img/1.jpg\" alt=\"logo\" />\n        <h1>好好学习，天天向上</h1>\n      </div>\n      <!-- 轮播图 -->\n      <el-carousel height=\"300px\" type=\"card\" :interval=\"2000\">\n        <el-carousel-item>\n          <img src=\"../assets/img/14.jpg\" alt />\n        </el-carousel-item>\n        <el-carousel-item>\n          <img src=\"../assets/img/9.jpg\" alt />\n        </el-carousel-item>\n        <el-carousel-item>\n          <img src=\"../assets/img/10.jpg\" alt />\n        </el-carousel-item>\n        <el-carousel-item>\n          <img src=\"../assets/img/15.jpg\" alt />\n        </el-carousel-item>\n        <el-carousel-item>\n          <img src=\"../assets/img/5.jpg\" alt />\n        </el-carousel-item>\n      </el-carousel>\n      <h2 class=\"welcome\">欢迎您！使用黄河科技学院宿舍管理系统</h2>\n    </el-card>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {};\n  },\n  methods: {}\n};\n</script>\n\n<style lang=\"css\" scoped>\n.el-carousel__item img {\n  height: 100%;\n  width: 100%;\n}\n.welcome {\n  text-align: center;\n  margin: 40px 0px;\n}\n.logo {\n  height: 60px;\n  display: flex;\n  align-items: center;\n  margin-bottom: 20px;\n  text-align: center;\n}\n.logo img {\n  height: 100%;\n}\n.logo h1 {\n  display: inline-block;\n  margin-left: 140px;\n}\n</style>"
+        }
+    ]
+}

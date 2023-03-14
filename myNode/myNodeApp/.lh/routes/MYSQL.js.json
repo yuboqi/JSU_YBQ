@@ -1,0 +1,18 @@
+{
+    "sourceFile": "routes/MYSQL.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1656555210048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1656555210048,
+            "name": "Commit-0",
+            "content": "// 1, 引模块:npm install mysql\nconst mysql = require('mysql');\n// 2, 创建连接\nconst pool = mysql.createPool({\n    host: 'localhost',// 数据库地址\n    user: 'root',// 数据库用户\n    password: '4536',// 数据库密码\n    database: 'studentdormitory'// 要连接的数据库\n});\n// connection.connect();\n\n// 数据库操作\nlet query = function( sql, values) {\n    // 返回一个 Promise\n    return new Promise(( resolve, reject ) => {\n        pool.getConnection(function(err, connection) { // 开启数据库\n            if (err) {\n                reject( err );\n            } else {\n                console.log('开启成功!');\n                pool.query(sql, values, ( err, rows) => {\n                    if ( err ) {\n                        reject(err);\n                    } else {\n                        resolve(rows);\n                    }\n                    // 结束会话\n                    connection.release();\n                });\n            }\n        });\n    });\n};\n\n\n\nmodule.exports = query;\n\n\n\n\n\n\n\n\n"
+        }
+    ]
+}
