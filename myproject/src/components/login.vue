@@ -34,6 +34,7 @@
         <!-- 登录注册按钮 -->
         <el-form-item class="btns">
           <el-button type="primary" @click="rootLogin">登录</el-button>
+          <el-button type="primary" @click="userSignUp">注册</el-button>
           <el-button type="info" @click="reset">重置</el-button>
         </el-form-item>
       </el-form>
@@ -141,6 +142,9 @@ export default {
           });
       })
     },
+    userSignUp(){
+      this.$router.push('/register')
+    }
   },
 }
 </script>

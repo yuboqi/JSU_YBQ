@@ -23,7 +23,7 @@
           <img src="../assets/img/5.jpg" alt />
         </el-carousel-item>
       </el-carousel>
-      <h2 class="welcome">欢迎使用学生宿舍管理系统！</h2>
+      <h2 class="welcome">欢迎使用幻创远景保险公司后台管理系统！</h2>
     </el-card>
   </div>
 </template>
