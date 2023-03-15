@@ -81,7 +81,7 @@ router.put('/update', async (ctx, next) => {
 	let ranges = ctx.request.body.ranges;
 	//更新数据
 	let a = await query(
-		`UPDATE insurance_types SET insuranceName = '${insuranceName}',upperLimit = '${upperLimit}',description = '${description}',rate = '${rate}', ranges = '${ranges}' WHERE type_id = ${type_id};`
+		`UPDATE insurance_types SET insuranceName = '${insuranceName}',upperLimit = '${upperLimit}',description = '${description}',rate = '${rate}', ranges = '${ranges}' WHERE type_id = '${type_id}';`
 	);
 	console.log(a);
 

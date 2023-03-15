@@ -34,7 +34,7 @@ router.get('/info', async (ctx, next) => {
   const custId = ctx.query.custId;
   const result = await query(`SELECT *
                               FROM customer
-                              WHERE cust_id = ${custId}`);
+                              WHERE cust_id = '${custId}'`);
   ctx.body = {
     code: 200,
     data: result
@@ -64,7 +64,7 @@ router.post('/update', async (ctx, next) => {
                                   cust_phone    = '${cust_phone}',
                                   cust_email    = '${cust_email}',
                                   role          = ${role}
-                              WHERE cust_id = ${cust_id}`);
+                              WHERE cust_id = '${cust_id}'`);
   ctx.body = {
     code: 200,
     data: result
@@ -78,7 +78,7 @@ router.post('/delete', async (ctx, next) => {
   const custId = ctx.request.body.custId;
   const result = await query(`DELETE
                               FROM customer
-                              WHERE cust_id = ${custId}`);
+                              WHERE cust_id = '${custId}'`);
   ctx.body = {
     code: 200,
     data: result

@@ -29,7 +29,7 @@ router.get('/suopeiDetail', async (ctx, next) => {
     const claims_id = ctx.query.claimsId;
     const result = await query(`SELECT *
                                 FROM claims
-                                WHERE claims_id = ${claims_id}`);
+                                WHERE claims_id = '${claims_id}'`);
     ctx.body = {
       code: 200,
       data: result
@@ -44,7 +44,7 @@ router.delete('/suopei', async (ctx, next) => {
   const claims_id = ctx.query.claimsId;
   const result = await query(`DELETE
                               FROM claims
-                              WHERE claims_id = ${claims_id}`);
+                              WHERE claims_id = '${claims_id}'`);
   ctx.body = {
     code: 200,
     data: result
@@ -76,7 +76,7 @@ router.get('/lipeiDetail', async (ctx, next) => {
     const lipei_id = ctx.query.lipeiId;
     const result = await query(`SELECT *
                                 FROM lipei
-                                WHERE lipei_id = ${lipei_id}`);
+                                WHERE lipei_id = '${lipei_id}'`);
     ctx.body = {
       code: 200,
       data: result
@@ -92,7 +92,7 @@ router.delete('/lipei', async (ctx, next) => {
     const lipei_id = ctx.query.lipeiId;
     const result = await query(`DELETE
                                 FROM lipei
-                                WHERE lipei_id = ${lipei_id}`);
+                                WHERE lipei_id = '${lipei_id}'`);
     ctx.body = {
       code: 200,
       data: result

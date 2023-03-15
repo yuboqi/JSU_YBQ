@@ -15,11 +15,11 @@ router.get('/list', async (ctx, next) => {
   const start = (page - 1) * pageSize;
   const result = await query(`SELECT *
                               FROM insurance_policies
-                              WHERE cust_id = ${custId} limit ${start}
+                              WHERE cust_id = '${custId}' limit ${start}
                                   , ${pageSize}`);
   const total = await query(`SELECT COUNT(*)
                              FROM insurance_policies
-                             WHERE cust_id = ${custId}`);
+                             WHERE cust_id = '${custId}'`);
   ctx.body = {
     code: 200,
     data: result,

@@ -12,7 +12,7 @@ router.get('/root', async (ctx, next) => {
 	let root_id = ctx.request.body.root_id;
 	//根据用户id值更新数据
 	let a = await query(
-		`SELECT * from root WHERE root_id = ${root_id};`
+		`SELECT * from root WHERE root_id = '${root_id}';`
 	);
 	console.log(a);
 	console.log("---------");
@@ -37,7 +37,7 @@ router.get('/user', async (ctx, next) => {
 	let cust_id = ctx.request.body.cust_id;
 	//根据用户id值更新数据
 	let a = await query(
-		`SELECT * from customer WHERE cust_id = ${cust_id};`
+		`SELECT * from customer WHERE cust_id = '${cust_id}';`
 	);
 	console.log(a);
 	console.log("---------");
@@ -107,7 +107,7 @@ router.put('/update', async (ctx, next) => {
 	let ranges = ctx.request.body.ranges;
 	//更新数据
 	let a = await query(
-		`UPDATE insurance_types SET insuranceName = '${insuranceName}',upperLimit = '${upperLimit}',description = '${description}',rate = '${rate}', ranges = '${ranges}' WHERE type_id = ${type_id};`
+		`UPDATE insurance_types SET insuranceName = '${insuranceName}',upperLimit = '${upperLimit}',description = '${description}',rate = '${rate}', ranges = '${ranges}' WHERE type_id = '${type_id}';`
 	);
 	console.log(a);
 

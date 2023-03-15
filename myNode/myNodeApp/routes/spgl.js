@@ -98,7 +98,7 @@ router.get('/myClaims', async (ctx, next) => {
                                      LEFT JOIN insurance_types t ON p.type_id = t.type_id
                                      LEFT JOIN lipei l ON c.claims_id = l.claims_id
                                      LEFT JOIN customer u ON u.cust_id = p.cust_id
-                            WHERE c.cust_id = ${userId}
+                            WHERE c.cust_id = '${userId}'
                               AND t.insuranceName LIKE '%${bxmc}%'
                               AND p.number LIKE '%${ddh}%'
                             ORDER BY c.claims_date DESC
@@ -139,7 +139,7 @@ router.get('/myClaims', async (ctx, next) => {
                                     LEFT JOIN insurance_types t ON p.type_id = t.type_id
                                     LEFT JOIN lipei l ON c.claims_id = l.claims_id
                                     LEFT JOIN customer u ON p.cust_id = u.cust_id
-                           WHERE c.cust_id = ${userId}
+                           WHERE c.cust_id = '${userId}'
                              AND t.insuranceName LIKE '%${bxmc}%'
                              AND c.claims_number LIKE '%${ddh}%'
       `);
@@ -188,7 +188,7 @@ router.post('/agree', async (ctx, next) => {
   const claimsId = ctx.request.body.claimsId; // 索赔ID
   const result = await query(`UPDATE claims
                               SET claims_status = 'approved'
-                              WHERE claims_id = ${claimsId}`);
+                              WHERE claims_id = '${claimsId}'`);
   if (result.affectedRows === 1) {
     ctx.body = {
       code: 200,
@@ -204,7 +204,7 @@ router.post('/refuse', async (ctx, next) => {
     const claimsId = ctx.request.body.claimsId; // 索赔ID
     const result = await query(`UPDATE claims
                                 SET claims_status = 'blocked'
-                                WHERE claims_id = ${claimsId}`);
+                                WHERE claims_id = '${claimsId}'`);
     if (result.affectedRows === 1) {
       ctx.body = {
         code: 200,
@@ -220,7 +220,7 @@ router.delete('/delete', async (ctx, next) => {
   const claimsId = ctx.request.query.claimsId; // 索赔ID
   const result = await query(`DELETE
                               FROM claims
-                              WHERE claims_id = ${claimsId}`);
+                              WHERE claims_id = '${claimsId}'`);
   if (result.affectedRows === 1) {
     ctx.body = {
       code: 200,

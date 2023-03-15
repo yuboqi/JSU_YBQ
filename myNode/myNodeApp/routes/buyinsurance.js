@@ -26,7 +26,7 @@ router.post('/buy', async (ctx, next) => {
 	if (a.affectedRows == 1) {
 		// 更新成功
 		//根据id查询数据库,返回前端
-		let newA = await query(`SELECT * FROM insurance_policies WHERE cust_id = ${cust_id}`);
+		let newA = await query(`SELECT * FROM insurance_policies WHERE cust_id = '${cust_id}'`);
 		// 格式化数据类型
 		var newDataString = JSON.stringify(newA);
 		var newResult = JSON.parse(newDataString);
@@ -53,7 +53,7 @@ router.get('/', async (ctx, next) => {
 	let cust_id = ctx.request.query.cust_id;
 	//更新数据
 	let a = await query(
-		`SELECT * FROM insurance_policies WHERE cust_id = ${cust_id}`
+		`SELECT * FROM insurance_policies WHERE cust_id = '${cust_id}'`
 	);
 	var dataString = JSON.stringify(a);
 	var result = JSON.parse(dataString);

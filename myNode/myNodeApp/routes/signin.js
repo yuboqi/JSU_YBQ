@@ -334,14 +334,14 @@ router.post('/update', async (ctx, next) => {
 	let root_phone = ctx.request.body.root_phone;
 	//根据用户id值更新数据
 	let a = await query(
-		`update root set root_phone = ${root_phone} where root_id = ${root_id}`
+		`update root set root_phone = ${root_phone} where root_id = '${root_id}'`
 	);
 	console.log(a);
 
 	if (a.changedRows == 1) {
 		// 更新成功
 		//根据id查询数据库,返回前端
-		let newA = await query(`SELECT * FROM root WHERE root_id = ${root_id}`);
+		let newA = await query(`SELECT * FROM root WHERE root_id = '${root_id}'`);
 		// 格式化数据类型
 		var newDataString = JSON.stringify(newA);
 		var newResult = JSON.parse(newDataString);

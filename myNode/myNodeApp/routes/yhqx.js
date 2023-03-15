@@ -96,7 +96,7 @@ router.post('/edit', async (ctx, next) => {
 	let tel = ctx.request.body.tel;
 	let roler = ctx.request.body.roler;
 	// 根据id修改数据
-	let a = await query(`update yhqx set tel = '${tel}',roler = '${roler}' where id = ${id}`);
+	let a = await query(`update yhqx set tel = '${tel}',roler = '${roler}' where id = '${id}'`);
 	console.log(a);
 	if (a.changedRows == 1 && a.affectedRows == 1) {
 		let data = {
@@ -123,7 +123,7 @@ router.post('/del', async (ctx, next) => {
 	console.log(ctx.request.body);
 	var id = ctx.request.body.id;
 	//根据用户id值更新对应学生的状态，用来控制该学生是否被删除
-	let a = await query(`update yhqx set state = 0 where id = ${id}`);
+	let a = await query(`update yhqx set state = 0 where id = '${id}'`);
 
 	if (a.changedRows == 1) {
 		let data = {

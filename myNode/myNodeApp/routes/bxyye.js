@@ -103,7 +103,7 @@ router.get('/detail', async (ctx, next) => {
                              LEFT JOIN customer c ON i.cust_id = c.cust_id
                              LEFT JOIN root r ON i.root_id = r.root_id
                              LEFT JOIN claims cl ON i.policies_id = cl.policies_id
-                    WHERE i.policies_id = ${policiesId}`;
+                    WHERE i.policies_id = '${policiesId}'`;
     const result = await query(newSQL);
     ctx.body = {
       code: 200,
@@ -118,7 +118,7 @@ router.delete('/delete', async (ctx, next) => {
   const policiesId = ctx.request.body.policiesId;
   const result = await query(`DELETE
                               FROM insurance_policies
-                              WHERE policies_id = ${policiesId}`);
+                              WHERE policies_id = '${policiesId}'`);
   ctx.body = {
     code: 200,
     data: result

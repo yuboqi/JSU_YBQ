@@ -1,5 +1,25 @@
 
 import request from './request'
+//用户注册
+export const signupAPI = (signupMap) => request({
+  url: '/signup',
+  method: 'POST',
+  data: {
+    "cust_id": signupMap.id,
+    "cust_account": signupMap.account,
+    "cust_password": signupMap.password,
+    "cust_name": signupMap.name,
+    "cust_address": signupMap.address,
+    "cust_phone": signupMap.phone,
+    "cust_email": signupMap.email,
+    "cust_sex": signupMap.sex,
+    "cust_birthday": signupMap.birthday
+  }
+})
+
+
+
+
 // 获取所有频道
 
 export const getAllChannelsAPI = () => request({

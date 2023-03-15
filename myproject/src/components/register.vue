@@ -10,7 +10,7 @@
       <el-form
         :model="signinForm"
         :rules="rules"
-        ref="signinFormRef"
+        ref="signupFormRef"
         label-width="0px"
         class="login_form"
       >
@@ -96,12 +96,14 @@
 </template>
 
 <script>
+import {randomNum} from '@/util/uuid_id.js'
 export default {
   name: 'register',
   data() {
     return {
       //登录表单数据绑定对象
       signinForm: {
+        id: '',
         account: '',
         password: '',
         name: '',
@@ -136,8 +138,8 @@ export default {
           { required: true, message: '请输入地址', trigger: 'blur' },
           {
             min: 1,
-            max: 10,
-            message: '长度在 1 到 10 个字符',
+            max: 30,
+            message: '长度在 1 到 30 个字符',
             trigger: 'blur',
           },
         ],
@@ -172,11 +174,34 @@ export default {
   methods: {
     // 点击重置按钮重置表单
     reset() {
-      this.$refs.signinFormRef.resetFields()
+      this.$refs.signupFormRef.resetFields()
     },
     rootLogin() {},
     userSignUp() {
-      console.log('注册')
+      console.log(this.signinForm);
+      this.$refs.signupFormRef.validate(async (valid) => {
+         // 如果校验失败就返回
+         if (!valid) return
+         try {
+          this.signinForm.id = randomNum()
+          const res = await this.$API.signupAPI(this.signinForm)
+          if(res.data.code == 200){
+            this.$message({
+              type: 'success',
+              message: '注册成功'
+            })
+            this.$router.push('/login')
+          }else{
+            this.$message({
+              type: 'error',
+              message: '注册失败'
+            })
+          }
+         } catch (error) {
+          console.log(error);
+          alert(error.message)
+         }
+      })
     },
     toSignin(){
       this.$router.push('/login')

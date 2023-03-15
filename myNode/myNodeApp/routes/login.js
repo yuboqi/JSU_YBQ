@@ -181,7 +181,7 @@ router.post('/update', async (ctx, next) => {
          cust_birthday = '${cust_birthday}',
          cust_email    = '${cust_email}',
          cust_sex      = '${cust_sex}'
-     where cust_id = ${cust_id}`
+     where cust_id = '${cust_id}'`
   );
   console.log(a);
 
@@ -190,7 +190,7 @@ router.post('/update', async (ctx, next) => {
     //根据id查询数据库,返回前端
     let newA = await query(`SELECT *
                             FROM customer
-                            WHERE cust_id = ${cust_id}`);
+                            WHERE cust_id = '${cust_id}'`);
     // 格式化数据类型
     var newDataString = JSON.stringify(newA);
     var newResult = JSON.parse(newDataString);

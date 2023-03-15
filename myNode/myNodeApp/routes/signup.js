@@ -33,7 +33,7 @@ router.post('/', async (ctx, next) => {
 	if (a.affectedRows == 1) {
 		// 更新成功
 		//根据id查询数据库,返回前端
-		let newA = await query(`SELECT * FROM customer WHERE cust_id = ${cust_id}`);
+		let newA = await query(`SELECT * FROM customer WHERE cust_id = '${cust_id}'`);
 		// 格式化数据类型
 		var newDataString = JSON.stringify(newA);
 		var newResult = JSON.parse(newDataString);

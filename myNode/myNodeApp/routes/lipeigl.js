@@ -18,7 +18,7 @@ router.post('/', async (ctx, next) => {
   // 1. 根据索赔ID查询索赔是否存在
   const claims = await query(`SELECT *
                               FROM claims
-                              WHERE claims_id = ${claimsId}`);
+                              WHERE claims_id = '${claimsId}'`);
   if (claims.length === 0) {
     ctx.body = {
       code: 201,
@@ -28,7 +28,7 @@ router.post('/', async (ctx, next) => {
   // 2. 根据索赔ID查询索赔是否已经理赔
   const claims2 = await query(`SELECT *
                                FROM claims
-                               WHERE claims_id = ${claimsId}
+                               WHERE claims_id = '${claimsId}'
                                  AND claims_status = 'pending' ||
                                                      ''`);
   if (claims2.length === 0) {
@@ -45,7 +45,7 @@ router.post('/', async (ctx, next) => {
   // 更新状态
   const result2 = await query(`UPDATE claims
                                SET claims_status = 'negotiation'
-                               WHERE claims_id = ${claimsId}`);
+                               WHERE claims_id = '${claimsId}'`);
   if (result.affectedRows === 1 && result2.affectedRows === 1) {
     ctx.body = {
       code: 200,

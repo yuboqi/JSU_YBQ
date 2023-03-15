@@ -60,7 +60,7 @@ router.put('/update', async (ctx, next) => {
                                   description   = '${description}',
                                   rate          = '${rate}',
                                   ranges        = '${ranges}'
-                              WHERE type_id = ${typeId}`);
+                              WHERE type_id = '${typeId}'`);
   ctx.body = {
     code: 200,
     data: result
@@ -74,7 +74,7 @@ router.delete('/delete', async (ctx, next) => {
   const typeId = ctx.query.typeId;
   const result = await query(`DELETE
                               FROM insurance_types
-                              WHERE type_id = ${typeId}`);
+                              WHERE type_id = '${typeId}'`);
   ctx.body = {
     code: 200,
     data: result
@@ -92,8 +92,8 @@ router.post('/buy', async (ctx, next) => {
   // 查看是否已购买
   const isBuy = await query(`SELECT *
                              FROM insurance_policies
-                             WHERE cust_id = ${userId}
-                               AND type_id = ${typeId}`);
+                             WHERE cust_id = '${userId}'
+                               AND type_id = '${typeId}'`);
   if (isBuy.length > 0) {
     ctx.body = {
       code: 201,
@@ -104,7 +104,7 @@ router.post('/buy', async (ctx, next) => {
   // 根据typeId查询保险信息
   const insurance = await query(`SELECT *
                                  FROM insurance_types
-                                 WHERE type_id = ${typeId}`);
+                                 WHERE type_id = '${typeId}'`);
   const insuranceName = insurance[0].insuranceName;
   const upperLimit = insurance[0].upperLimit;
   const description = insurance[0].description;
@@ -146,14 +146,14 @@ router.get('/myOrder', async (ctx, next) => {
                                      t.insuranceName  as insuranceName
                               FROM insurance_policies i
                                        LEFT JOIN insurance_types t ON i.type_id = t.type_id
-                              WHERE i.cust_id = ${userId}
+                              WHERE i.cust_id = '${userId}'
                                 AND i.number LIKE '%${ddh}%'
                                 AND t.insuranceName LIKE '%${bxmc}%' limit ${start}
                                   , ${pageSize}`);
   const total = await query(`SELECT COUNT(*)
                              FROM insurance_policies i
                                       LEFT JOIN insurance_types t ON i.type_id = t.type_id
-                             WHERE i.cust_id = ${userId}
+                             WHERE i.cust_id = '${userId}'
                                AND i.number LIKE '%${ddh}%'
                                AND t.insuranceName LIKE '%${bxmc}%'`);
   ctx.body = {
@@ -175,7 +175,7 @@ router.get('/myBx', async (ctx, next) => {
                                      t.insuranceName  as insuranceName
                               FROM insurance_policies i
                                        LEFT JOIN insurance_types t ON i.type_id = t.type_id
-                              WHERE i.cust_id = ${userId} `);
+                              WHERE i.cust_id = '${userId}' `);
   ctx.body = {
     code: 200,
     data: result
@@ -191,7 +191,7 @@ router.delete
   const result = await query(`
       DELETE
       FROM insurance_policies
-      WHERE policies_id = ${policiesId}`);
+      WHERE policies_id = '${policiesId}'`);
   ctx.body = {
     code: 200,
     data: result
