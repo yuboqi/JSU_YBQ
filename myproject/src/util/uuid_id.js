@@ -1,4 +1,4 @@
-//生成多位的数字随机数
+//生成多位的数字随机数finish
 export function randomNum() {
   var num = "";
   for (var i = 0; i < 10; i++) {
