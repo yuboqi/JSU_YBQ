@@ -3,8 +3,8 @@
     <!-- 面包屑导航区 -->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>后勤服务</el-breadcrumb-item>
-      <el-breadcrumb-item>损耗报修</el-breadcrumb-item>
+      <el-breadcrumb-item>索赔管理</el-breadcrumb-item>
+      <el-breadcrumb-item>申请索赔</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 添加保修卡片视图区 -->
     <el-card>

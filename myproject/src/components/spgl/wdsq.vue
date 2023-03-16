@@ -3,8 +3,8 @@
     <!-- 面包屑导航区 -->
     <el-breadcrumb separator-class="el-icon-arrow-right">
       <el-breadcrumb-item :to="{ path: '/home' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>商品管理</el-breadcrumb-item>
-      <el-breadcrumb-item>我的订单</el-breadcrumb-item>
+      <el-breadcrumb-item>索赔管理</el-breadcrumb-item>
+      <el-breadcrumb-item>我的索赔</el-breadcrumb-item>
     </el-breadcrumb>
     <!-- 搜索选项 卡片视图区 -->
     <el-card>
