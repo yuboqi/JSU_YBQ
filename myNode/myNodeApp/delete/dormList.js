@@ -2,7 +2,7 @@
 
 const router = require('koa-router')()
 //引入MySQL数据库
-const query = require('./MYSQL');
+const query = require('../routes/MYSQL');
 router.prefix('/dormList');
 
 // 搜索按钮点击事件搜索相应内容并返回

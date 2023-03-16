@@ -2,7 +2,7 @@
 
 const router = require('koa-router')()
 //引入MySQL数据库
-const query = require('./MYSQL');
+const query = require('../routes/MYSQL');
 router.prefix('/bxtj');
 
 // 返回楼管评价页面搜索按钮的数据

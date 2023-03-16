@@ -1,4 +1,4 @@
-//保险赔偿
+//保险赔偿ybq
 
 const router = require('koa-router')()
 //引入MySQL数据库

@@ -11,27 +11,28 @@ const cors = require('koa-cors')
 app.use(cors())
 
 const index = require('./routes/index')
+
 const users = require('./routes/users')
 // 配置登录页面的路由
 const login = require('./routes/login')
 // 配置新区楼宇页面的路由
-const newly = require('./routes/newly')
-// 配置宿舍列表页面的路由
-const dormList = require('./routes/dormList')
-// 配置学生列表页面的路由
-const xslb = require('./routes/xslb')
-// 配置损坏报修页面的路由
-const shbx = require('./routes/shbx')
-// 配置宿舍评分页面的路由
-const sspf = require('./routes/sspf')
-// 配置楼管评分页面的路由
-const lgpf = require('./routes/lgpf')
-// 配置报修统计页面的路由
-const bxtj = require('./routes/bxtj')
-// 配置用户权限页面的路由
-const yhqx = require('./routes/yhqx')
-//  管理员登录页面的路由
-const signin = require('./routes/signin')
+// const newly = require('./routes/newly')
+// // 配置宿舍列表页面的路由
+// const dormList = require('./routes/dormList')
+// // 配置学生列表页面的路由
+// const xslb = require('./routes/xslb')
+// // 配置损坏报修页面的路由
+// const shbx = require('./routes/shbx')
+// // 配置宿舍评分页面的路由
+// const sspf = require('./routes/sspf')
+// // 配置楼管评分页面的路由
+// const lgpf = require('./routes/lgpf')
+// // 配置报修统计页面的路由
+// const bxtj = require('./routes/bxtj')
+// // 配置用户权限页面的路由
+// const yhqx = require('./routes/yhqx')
+// //  管理员登录页面的路由
+// const signin = require('./delete/signin')
 //  用户注册的路由
 const signup = require('./routes/signup')
 //  用户注册的路由
@@ -86,15 +87,15 @@ app.use(async (ctx, next) => {
 app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 app.use(login.routes(), login.allowedMethods())
-app.use(newly.routes(), newly.allowedMethods())
-app.use(dormList.routes(), dormList.allowedMethods())
-app.use(xslb.routes(), xslb.allowedMethods())
-app.use(shbx.routes(), shbx.allowedMethods())
-app.use(sspf.routes(), sspf.allowedMethods())
-app.use(lgpf.routes(), lgpf.allowedMethods())
-app.use(bxtj.routes(), bxtj.allowedMethods())
-app.use(yhqx.routes(), yhqx.allowedMethods())
-app.use(signin.routes(), signin.allowedMethods())
+// app.use(newly.routes(), newly.allowedMethods())
+// app.use(dormList.routes(), dormList.allowedMethods())
+// app.use(xslb.routes(), xslb.allowedMethods())
+// app.use(shbx.routes(), shbx.allowedMethods())
+// app.use(sspf.routes(), sspf.allowedMethods())
+// app.use(lgpf.routes(), lgpf.allowedMethods())
+// app.use(bxtj.routes(), bxtj.allowedMethods())
+// app.use(yhqx.routes(), yhqx.allowedMethods())
+// app.use(signin.routes(), signin.allowedMethods())
 app.use(signup.routes(), signup.allowedMethods())
 app.use(type.routes(), type.allowedMethods())
 app.use(account.routes(), account.allowedMethods())

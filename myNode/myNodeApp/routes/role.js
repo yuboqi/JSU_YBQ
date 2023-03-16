@@ -1,4 +1,4 @@
-//权限管理
+//权限管理ybq
 
 const router = require('koa-router')()
 //引入MySQL数据库

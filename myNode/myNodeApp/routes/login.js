@@ -93,11 +93,6 @@ router.post('/', async (ctx, next) => {
             authName: "我的客户",
             path: "wdkh",
             children: []
-          },{
-            id: "44.2",
-            authName: "全部用户",
-            path: "qbyh",
-            children: []
           }
         ]
         },

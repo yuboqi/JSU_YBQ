@@ -2,7 +2,7 @@
 
 const router = require('koa-router')()
 //引入MySQL数据库
-const query = require('./MYSQL');
+const query = require('../routes/MYSQL');
 router.prefix('/sspf');
 
 // 返回宿舍评分搜索按钮的数据

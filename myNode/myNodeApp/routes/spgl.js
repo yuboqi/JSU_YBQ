@@ -1,4 +1,4 @@
-// 索赔管理
+// 索赔管理ybq
 
 const router = require('koa-router')()
 //引入MySQL数据库
