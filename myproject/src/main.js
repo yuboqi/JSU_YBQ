@@ -22,6 +22,18 @@ Vue.prototype.$http = axios
 
 Vue.config.productionTip = false
 
+router.beforeEach((to, from, next) => {
+  if (to.path === '/login' || to.path === '/register') return next()
+  // 获取token
+  const sessionStr = window.sessionStorage.getItem('session')
+  if (!sessionStr){
+    alert('请先登录')
+    return next('/login')
+  }
+  next()
+})
+
+
 new Vue({
   router,
   store,

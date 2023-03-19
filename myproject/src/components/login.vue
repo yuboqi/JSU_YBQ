@@ -44,6 +44,7 @@
 
 <script>
 // import { Notify } from 'vant'
+import {getSession} from '@/util/uuid_id.js'
 export default {
   name: 'login',
   data() {
@@ -121,6 +122,8 @@ export default {
               var userData = JSON.stringify(response.data.data[0]);
               window.sessionStorage.setItem('userData',userData);
               var a1 = response.data.route;
+              var session = getSession();
+              window.sessionStorage.setItem('session',session);
               // 将请求获取到的 路由表 存到 vuex 中
               _this.$store.commit('rolerRouter',a1)
               // console.log(_this.$store.state.routerlist)
