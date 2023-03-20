@@ -155,7 +155,7 @@ export default {
             trigger: 'blur',
           },
         ],
-        //邮箱验证
+        //邮箱验证1
         email: [
           { required: true, message: '请输入邮箱', trigger: 'blur' },
           {
