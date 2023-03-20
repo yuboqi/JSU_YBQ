@@ -2,25 +2,25 @@
   <div>
     <el-card>
       <div class="logo">
-        <img src="../assets/img/1.jpg" alt="logo" />
+        <img src="../assets/img/magiccreative-logo.png" alt="logo" />
         <h1>好好学习，天天向上</h1>
       </div>
       <!-- 轮播图 -->
-      <el-carousel height="300px" type="card" :interval="2000">
+      <el-carousel height="400px" type="card" :interval="2000">
         <el-carousel-item>
-          <img src="../assets/img/14.jpg" alt />
+          <img src="../assets/img/rotograph01.jpg" alt />
         </el-carousel-item>
         <el-carousel-item>
-          <img src="../assets/img/9.jpg" alt />
+          <img src="../assets/img/rotograph02.jpg" alt />
         </el-carousel-item>
         <el-carousel-item>
-          <img src="../assets/img/10.jpg" alt />
+          <img src="../assets/img/rotograph03.jpg" alt />
         </el-carousel-item>
         <el-carousel-item>
-          <img src="../assets/img/15.jpg" alt />
+          <img src="../assets/img/rotograph04.jpg" alt />
         </el-carousel-item>
         <el-carousel-item>
-          <img src="../assets/img/5.jpg" alt />
+          <img src="../assets/img/rotograph05.png" alt />
         </el-carousel-item>
       </el-carousel>
       <h2 class="welcome">欢迎使用幻创远景保险公司后台管理系统！</h2>
@@ -41,6 +41,7 @@ export default {
 .el-carousel__item img {
   height: 100%;
   width: 100%;
+  object-fit: cover;
 }
 .welcome {
   text-align: center;

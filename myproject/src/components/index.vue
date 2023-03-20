@@ -9,7 +9,7 @@
         <el-menu-item index="/f-sqsp">申请索赔</el-menu-item>
         <el-menu-item index="/f-wdsq">我的索赔</el-menu-item>
       </el-submenu>
-      <el-menu-item index="/login">我要登陆</el-menu-item>
+      <el-menu-item index="/login">退出登录</el-menu-item>
       <el-menu-item index="/home" v-show="showMenu">后台管理
       </el-menu-item>
     </el-menu>

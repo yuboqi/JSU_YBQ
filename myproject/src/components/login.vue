@@ -4,7 +4,7 @@
     <div class="loginBox">
       <!-- logo区域 -->
       <div class="loginLogo">
-        <img src="../assets/img/log.png" alt />
+        <img src="../assets/img/magiccreative-logo.png" alt />
       </div>
       <!-- 登录表单区域 -->
       <el-form
@@ -162,7 +162,7 @@ body {
 .login {
   width: 100%;
   height: 100%;
-  background: url('../assets/img/10.jpg') center center no-repeat;
+  background: url('../assets/img/bg.png') center center no-repeat;
   background-size: 100% 100%;
   position: relative;
   overflow: hidden;
@@ -178,7 +178,7 @@ body {
   width: 500px;
   height: 300px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(43, 115, 175, 0.4);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -200,6 +200,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  object-fit: cover;
 }
 .btns {
   display: flex;
