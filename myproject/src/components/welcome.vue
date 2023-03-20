@@ -3,7 +3,7 @@
     <el-card>
       <div class="logo">
         <img src="../assets/img/magiccreative-logo.png" alt="logo" />
-        <h1>好好学习，天天向上</h1>
+        <h1>让我们为您的未来保驾护航</h1>
       </div>
       <!-- 轮播图 -->
       <el-carousel height="400px" type="card" :interval="2000">
