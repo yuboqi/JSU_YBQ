@@ -60,6 +60,12 @@ const spgl = require('./routes/spgl')
 //理赔管理
 const lpgl = require('./routes/lipeigl')
 
+//公告管理
+const notification = require('./routes/notification')
+
+//反馈管理
+const fankui = require('./routes/fankui')
+
 // error handler
 onerror(app)
 
@@ -109,6 +115,8 @@ app.use(gmbx.routes(), gmbx.allowedMethods())
 app.use(user.routes(), user.allowedMethods())
 app.use(spgl.routes(), spgl.allowedMethods())
 app.use(lpgl.routes(), lpgl.allowedMethods())
+app.use(notification.routes(), notification.allowedMethods())
+app.use(fankui.routes(), fankui.allowedMethods())
 
 // error-handling
 app.on('error', (err, ctx) => {

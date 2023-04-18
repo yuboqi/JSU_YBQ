@@ -96,6 +96,32 @@ router.post('/', async (ctx, next) => {
           }
         ]
         },
+        {
+          id: 88,
+          authName: "公告管理",
+          path: "gggl",
+          children: [
+            {
+              id: "88.1",
+              authName: "系统公告",
+              path: "gggl",
+              children: []
+            }
+  ]
+        },
+        {
+          id: 99,
+          authName: "反馈列表",
+          path: "yhfk",
+          children: [
+            {
+              id: "99.1",
+              authName: "用户反馈",
+              path: "yhfk",
+              children: []
+            }
+  ]
+        },
       ]
       const menus1 = [
         {

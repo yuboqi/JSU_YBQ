@@ -16,6 +16,8 @@ import zyye from '../components/spgl/zyye.vue' //1
 import cpyye from '../components/spgl/cpyye.vue' //1
 import xsqk from '../components/spgl/xsqk.vue' //1
 import wdkh from '../components/spgl/wdkh.vue' //1
+import gggl from '../components/spgl/gggl.vue'
+import yhfk from '../components/spgl/yhfk.vue'
 import register from '@/components/register' //1
 
 Vue.use(VueRouter)
@@ -54,6 +56,8 @@ const routes = [
       {path: '/cpyye', component: cpyye},
       {path: '/xsqk', component: xsqk},
       {path: '/wdkh', component: wdkh},
+      {path: '/gggl', component: gggl},
+      {path: '/yhfk', component: yhfk},
     ]
   }
 ]
